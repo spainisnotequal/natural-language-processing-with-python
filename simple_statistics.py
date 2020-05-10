@@ -8,3 +8,17 @@ fdist.most_common(50)  # 50 most common tokens
 
 # cumilative frequency plot
 fdist.plot(50, cumulative=True)
+
+# get words longer than 10
+minimum_characters = 10
+words_set = set(book_of_genesis)  # not interested in duplicates
+long_words = [word for word in words_set if len(word) > minimum_characters]
+sorted(long_words)  # sorted alphabetically (capital letters first)
+
+# get words longer than 7 that occur more than 7 times
+minimum_characters = 7
+minimum_frequency = 7
+fdist = FreqDist(book_of_genesis)
+frequent_long_words = [word for word in words_set
+                       if len(word) > minimum_characters and fdist[word] > minimum_frequency]
+sorted(frequent_long_words)  # sorted alphabetically (capital letters first)
