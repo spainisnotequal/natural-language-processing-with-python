@@ -9,9 +9,13 @@ fdist.most_common(50)  # 50 most common tokens
 # cumilative frequency plot
 fdist.plot(50, cumulative=True)
 
+# consider capitalization and ignore duplicates
+# words_set = set(book_of_genesis)
+# ignore capitalization and duplicates
+words_set = set(word.lower() for word in book_of_genesis)
+
 # get words longer than 10
 minimum_characters = 10
-words_set = set(book_of_genesis)  # not interested in duplicates
 long_words = [word for word in words_set if len(word) > minimum_characters]
 sorted(long_words)  # sorted alphabetically (capital letters first)
 
