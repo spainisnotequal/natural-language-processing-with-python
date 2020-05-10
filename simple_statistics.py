@@ -22,3 +22,10 @@ fdist = FreqDist(book_of_genesis)
 frequent_long_words = [word for word in words_set
                        if len(word) > minimum_characters and fdist[word] > minimum_frequency]
 sorted(frequent_long_words)  # sorted alphabetically (capital letters first)
+
+# frequency of words based on their length
+words_length = [len(word) for word in book_of_genesis]
+fdist = FreqDist(words_length)
+fdist.most_common()
+fdist.max()  # most frequent word length
+fdist.freq(3)  # frequency of words whose length is 3
