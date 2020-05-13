@@ -11,8 +11,15 @@ fdist.plot(50, cumulative=True)
 
 # consider capitalization and ignore duplicates
 # words_set = set(book_of_genesis)
+
 # ignore capitalization and duplicates
-words_set = set(word.lower() for word in book_of_genesis)
+# words_set = set(word.lower() for word in book_of_genesis)
+
+# ignore capitalization, duplicates and non-alphabetic items (numbers and punctuation characters)
+words_set = set(word.lower() for word in book_of_genesis if word.isalpha())
+
+# number of words
+len(words_set)
 
 # get words longer than 10
 minimum_characters = 10
